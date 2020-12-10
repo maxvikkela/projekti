@@ -14,13 +14,13 @@
         }
 
     }
-    //Funktio, jolla pystyy tyhjentämään koko listan sisällön.
+    
     function clear(){
         var lista = document.getElementById("myList");
         lista.removeChild(lista.childNodes[0]);
         
     }
-    //Funktio, jolla voi poistaa yksittäisen merkinnän listasta.
+    
     function poistaTehtava(){
         event.currentTarget.parentElement.remove();
     }

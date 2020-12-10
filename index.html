@@ -6,34 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="mystyles.css">
 </head>
-<script>
-    //Luodaan funktio joka lisää tekstikenttään kirjoitetun merkkijonon listaan, jos koittaa lisätä tyhjän merkkijonon tekstikentän reunus muuttuu punaiseksi ja sivusto antaa alertin.
-    function listaus(){
-       
-        var vari = document.forms[0]["task"]
-        if(document.getElementById("task").value == ""){
-            vari.style.borderColor = "Red"
-            alert("You have to write something!")
-        } else {
-            var tehtava = document.getElementById("task").value;
-            var lista = document.getElementById("myList");
-            vari.style = "none"
-            //Lisää <li>-elementin ja lisää kirjoitetun tekstin luotuun elementtiin. Lisää myös napin, jolla voi poistaa lisätyn elementin.
-            lista.innerHTML += "<li>"+tehtava+ '\t'+ "<button id='poisto' onclick='poistaTehtava()' >X</button></li>";
+<script src="koodi.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        }
-
-    }
-    //Funktio, jolla pystyy tyhjentämään koko listan sisällön.
-    function clear(){
-        var lista = document.getElementById("myList");
-        lista.removeChild(lista.childNodes[0]);
-        
-    }
-    //Funktio, jolla voi poistaa yksittäisen merkinnän listasta.
-    function poistaTehtava(){
-        event.currentTarget.parentElement.remove();
-    }
 </script>
 <body>
 <!--HTML koodi, jolla luodaan tekstikenttä, sekä napit sisällön lisäämiseen ja kaiken siällön poistamiseen-->
