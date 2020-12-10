@@ -5,26 +5,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="mystyles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 <script src="koodi.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<script>$(document).ready(function(){
-    $("li").click(function(){
-      $(this).hide();
-    });
-  });</script>
+<script>
+
+$(document).ready(function() {
+$("#lisaa").click( function() {
+    
+        var tehtava = $('#boxi').val();
+         
+            if($("#boxi").val() == "") {
+                alert("You have to write something");
+            } else {
+                 $('#myList').append('<li>' + tehtava + '\t' + '<i class="fas fa-trash-alt"></i>'+'</li>');
+     } 
+    }
+    
+);
+});
+
+$(document).ready(function() {
+$("#poista").click( function()
+     {
+        $("#myList").empty();
+     }
+);
+});
+
+$(document).on('click','li', function(){
+        $(this).fadeOut();    
+      });
+
+</script>
 
 <body>
 <!--HTML koodi, jolla luodaan tekstikenttä, sekä napit sisällön lisäämiseen ja kaiken siällön poistamiseen-->
 <h1>To-do list</h1>
-<form name="todolist">
-    <input type="text" name="boxi" placeholder="Add a task">
+<form>
+    <input type="text" id="boxi" placeholder="Add a task">
     <button type="button" id="lisaa">Add</button>
     <button type="button" id="poista">Clear</button>
     </form>
     <br>
 <ul id="myList">
-    <li>task</li>
     </ul>
     
 
