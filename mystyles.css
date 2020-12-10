@@ -4,8 +4,8 @@ ul li {
   list-style-type: none;
   background: #ddd;
   font-size: xx-large;
-  transition: 0.2s;
   text-align: left;
+
   width: 80%;
 }
 
@@ -19,14 +19,6 @@ ul li:hover {
 }
 
 body {
-  font-family: Helvetica, sans-serif;
-  background-color: #e4e7ed;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
-
-form {
   font-family: Helvetica, sans-serif;
   background-color: #e4e7ed;
   margin-left: auto;

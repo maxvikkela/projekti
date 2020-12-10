@@ -6,11 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="mystyles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-<script src="koodi.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <script>
-
 $(document).ready(function() {
 $("#lisaa").click( function() {
     
@@ -20,7 +18,7 @@ $("#lisaa").click( function() {
                 alert("You have to write something");
             } else {
                  $('#myList').append('<li>' + tehtava + '\t' + '<i class="fas fa-trash-alt"></i>'+'</li>');
-     } 
+                } 
     }
     
 );
@@ -34,8 +32,8 @@ $("#poista").click( function()
 );
 });
 
-$(document).on('click','li', function(){
-        $(this).fadeOut();    
+$(document).on('click','i', function(){
+        $(this).closest("li").fadeOut("slow");    
       });
 
 </script>
@@ -43,13 +41,14 @@ $(document).on('click','li', function(){
 <body>
 <!--HTML koodi, jolla luodaan tekstikenttä, sekä napit sisällön lisäämiseen ja kaiken siällön poistamiseen-->
 <h1>To-do list</h1>
-<form>
+<div>
     <input type="text" id="boxi" placeholder="Add a task">
     <button type="button" id="lisaa">Add</button>
     <button type="button" id="poista">Clear</button>
-    </form>
+</div>
     <br>
 <ul id="myList">
+   
     </ul>
     
 
