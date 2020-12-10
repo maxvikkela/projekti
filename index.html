@@ -5,26 +5,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="mystyles.css">
-</head>
 <script src="koodi.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script>$(document).ready(function(){
+    $("li").click(function(){
+      $(this).hide();
+    });
+  });</script>
 
-</script>
 <body>
 <!--HTML koodi, jolla luodaan tekstikenttä, sekä napit sisällön lisäämiseen ja kaiken siällön poistamiseen-->
 <h1>To-do list</h1>
-<form>
-    <label for="task">Add a task:</label><br>
-    <input type="text" id="task" name="tehtava"><br>
-    <input type="button" value="Add" onclick=listaus()>
-    <button onclick=clear()>Clear</button>
-</form>
-
-<br>
-<br>
+<form name="todolist">
+    <input type="text" name="boxi" placeholder="Add a task">
+    <button type="button" id="lisaa">Add</button>
+    <button type="button" id="poista">Clear</button>
+    </form>
+    <br>
 <ul id="myList">
+    <li>task</li>
+    </ul>
+    
 
-</ul>
+
+
+
+
 
 </body>
 </html> 
