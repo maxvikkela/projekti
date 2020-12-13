@@ -8,15 +8,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <script>
+
+//lisätään "add" -nappiin onclick toiminto
 $(document).ready(function() {
 $("#lisaa").click( function() {
-    
+
+        //luodaan muuttuja "tehtava", joka lukee tekstikenttään syötetyn arvon
         var tehtava = $('#boxi').val();
-         
+
+         //lisätään if-lause, joka antaa käyttäjälle ilmoituksen jos tekstikenttä on jåätetty tyhjäksi.
             if($("#boxi").val() == "") {
                 alert("You have to write something");
+
+                //kun tekstikenttään on syötetty hyväksyttävä arvo, lisää seuraava lause aina uuden rivin käyttäjän syöttämällä arvolla, sekä lisää roskakori kuvakkeen rivin loppuun.
             } else {
+                
                  $('#myList').append('<li>' + tehtava + '\t' + '<i class="fas fa-trash-alt"></i>'+'</li>');
                 } 
     }
@@ -24,6 +32,7 @@ $("#lisaa").click( function() {
 );
 });
 
+//Lisätään "clear" -nappiin onclick toiminto, jolla tyhjennetään koko listan sisältö
 $(document).ready(function() {
 $("#poista").click( function()
      {
@@ -32,9 +41,14 @@ $("#poista").click( function()
 );
 });
 
+//Lisätään roskakori -kuvakkeeseen (i) toiminto, joka poistaa taulukosta valitun rivin (li -elementin) fadeOut toiminnolla. Tätä toiminnallisuutta ei meinattu aluksi saada toimimaan
+//mitenkään. Aina roskakorin painalluksesta tyhjeni koko lista. Loppujenlopuksi googlettamalla löytyi tämä "closest" toiminto, jolla lähti sitten toimimaan.
 $(document).on('click','i', function(){
         $(this).closest("li").fadeOut("slow");    
       });
+
+
+
 
 </script>
 
@@ -50,12 +64,6 @@ $(document).on('click','i', function(){
 <ul id="myList">
    
     </ul>
-    
-
-
-
-
-
 
 </body>
 </html> 
